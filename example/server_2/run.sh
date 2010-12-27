@@ -1,0 +1,1 @@
+tcpserver -H -l localhost -R -v 0 1667 /usr/bin/php server.php
