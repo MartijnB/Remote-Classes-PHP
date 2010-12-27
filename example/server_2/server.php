@@ -15,7 +15,7 @@ $sEncryptionKey = 'secretKey';
  * WARNING
  * 
  * Echo, print, printf etc will output to stdout! The stdout output is
- * written to the client als response data. Use stderr to output to the
+ * written to the client as response data. Use stderr to output to the
  * console!
  * 
  */
