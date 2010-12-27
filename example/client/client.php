@@ -1,5 +1,15 @@
 <?php
 
+/**************************/
+// Config
+/**************************/
+
+$sRemoteServerHost = '127.0.0.1';
+$iRemoteServerPort = 1667;
+$sEncryptionKey = 'secretKey';
+
+/**************************/
+
 require_once dirname(__FILE__) . '/../../lib/RCP.php';
 
 
@@ -21,8 +31,12 @@ $mTest = array(
 
 //var_dump(serialize($mTest));
 
-$oRemotePHPServer = new RCP_RemoteClassClient('127.0.0.1', 1667, 'secretKey');
-$oRemoteMathClass = $oRemotePHPServer->getObject('RemoteMathClass'); //use getNewObject to force a new object
+//connect to the remote server
+$oRemotePHPServer = new RCP_RemoteClassClient($sRemoteServerHost, $iRemoteServerPort, $sEncryptionKey);
+
+//create a remote object
+//use getNewObject to force a new object, getObject will return the same remote object every call
+$oRemoteMathClass = $oRemotePHPServer->getObject('RemoteMathClass'); 
 $oRemoteReturnClass = $oRemotePHPServer->getObject('RemoteReturnClass');
 
 var_dump($oRemoteReturnClass->returnValue($mTest));

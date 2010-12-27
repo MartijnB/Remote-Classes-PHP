@@ -1,5 +1,15 @@
 <?php
 
+/**************************/
+// Config
+/**************************/
+
+//See run.sh for the listen port
+
+$sEncryptionKey = 'secretKey';
+
+/**************************/
+
 /**
  * 
  * WARNING
@@ -45,5 +55,5 @@ class RemoteReturnClass implements RCP_IRemoteCallable {
 }
 
 //open the pipe and process the data
-$oServer = new RCP_RemoteClassPipeServer('secretKey');
+$oServer = new RCP_RemoteClassPipeServer($sEncryptionKey);
 $oServer->processRequest();

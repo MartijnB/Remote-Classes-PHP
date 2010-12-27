@@ -1,8 +1,18 @@
 <?php
 
+/**************************/
+// Config
+/**************************/
+
+$sListenServerHost = '127.0.0.1';
+$iListenServerPort = 1667;
+$sEncryptionKey = 'secretKey';
+
+/**************************/
+
 require_once dirname(__FILE__) . '/../../lib/RCP.php';
 
-$oServer = new RCP_RemoteClassTcpServer('0.0.0.0', 1667, 'secretKey');
+$oServer = new RCP_RemoteClassTcpServer($sListenServerHost, $iListenServerPort, $sEncryptionKey);
 
 class RemoteMathClass implements RCP_IRemoteCallable {
     /*public function __construct($iValue = 0) {
