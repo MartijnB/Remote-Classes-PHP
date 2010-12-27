@@ -3,8 +3,8 @@ Remote Classes for PHP 0.1
 Copyright 2010 iCept Media. All rights reserved.
 
 Remote Classes for PHP [RCP] is a library to use classes on a remote server 
-in a easy way. The client calls with a wrapper class methods and properties
-on a remote location.
+in a easy way. The client calls class method and properties on a remote object
+using a local wrapper.
 
 == SECURITY ==
 
@@ -20,9 +20,9 @@ on a remote location.
 
 == Examples ==
 
-There are 3 examples provided. A client and 2 server implementations. The first
-server is a pure PHP implementation and the second example use the ucspi-tcp
-tcpserver to provide concurent connections and a way more mature basis.
+Three examples are provided: one client and two server implementations. The first 
+server implementation is entirely PHP, whereas the second one uses the ucspi-tcp 
+TCP server to provide concurrent connections and a more mature basis.
 
 == Documentation ==
 
@@ -35,3 +35,7 @@ The following PHP features are NOT supported:
 
 - references (including objects by reference)
 - static methods
+
+== Protocol ==
+
+[length of the coming packet]<space>[[command id]<space>[sequentie id]<space>[serialized data]]
