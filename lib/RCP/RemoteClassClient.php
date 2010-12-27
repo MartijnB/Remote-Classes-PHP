@@ -16,7 +16,7 @@ class RCP_RemoteClassClient {
         $this->_secretKey = $sKey;
         
         if (!$this->testConnection()) {
-            throw new Exception('Connecting failed! Wrong protocol?');
+            throw new Exception('Connecting failed! Wrong protocol or secret key?');
         }
     }
     
